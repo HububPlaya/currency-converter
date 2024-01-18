@@ -1,22 +1,22 @@
 import React from 'react'
 
-function inputBox({
+function InputBox({
     label,
     amount,
     onAmountChange, 
     onCurrencyChange,
     currencyOptions = [],
-    selectedCuurency = "usd",
+    selectedCurrency = "usd",
     amountDisabled = false, 
     currencyDisabled = false,
     className="",
 }) {
   return (
-    <div className={`bg-white p-3 rounded-lg text-sm flex $
-    {className}`}>
+    <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
+
         {/*this input is where the amount is entered*/ }
         <div className="w-1-2">
-            <label classNamw="text-black/40 mb-2
+            <label className="text-black/40 mb-2
             inline-block ">{label}</label>
             <input
             type="number"
@@ -34,7 +34,7 @@ function inputBox({
             <select
             className="rounded-lg px-1 py-1 bg-gray-100
             cursor-pointer outline-none"
-            value={selectedCuurency}
+            value={selectedCurrency}
             onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
             disabled={currencyDisabled}
             >
@@ -42,7 +42,7 @@ function inputBox({
                     <option
                     key={currency}
                     value={currency}
-                    ></option>
+                    >{currency}</option>
                 ))}
             </select>
 
@@ -51,4 +51,4 @@ function inputBox({
   )
 }
 
-export default inputBox
+export default InputBox
